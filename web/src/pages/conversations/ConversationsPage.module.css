@@ -1,0 +1,164 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px var(--sf-page-pad-x) 24px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  align-items: start;
+  gap: 16px;
+}
+
+/* Below this width the table gets too narrow: the open conversation moves under it. */
+@media (max-width: 1360px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.listColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* ---------- Table ---------- */
+
+.titleCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.chatTile {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--sf-radius-md);
+  background: var(--sf-neutral-bg);
+}
+
+.chatTile img {
+  opacity: 0.7;
+}
+
+.titleText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 0;
+}
+
+.titleButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: var(--sf-text-md);
+  font-weight: 600;
+  color: var(--sf-text);
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.titleButton:hover {
+  color: var(--sf-green-700);
+  text-decoration: underline;
+}
+
+.titleButton[aria-current='true'] {
+  color: var(--sf-green-700);
+}
+
+.mainTag {
+  padding: 1px 7px;
+  border: 1px solid var(--sf-fresh-border);
+  border-radius: var(--sf-radius-sm);
+  background: var(--sf-fresh-bg);
+  font-size: var(--sf-text-xs);
+  font-weight: 600;
+  color: var(--sf-fresh);
+}
+
+.more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.moreNote {
+  font-size: var(--sf-text-sm);
+  color: var(--sf-text-muted);
+}
+
+.stateBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stateBox p {
+  margin: 0;
+}
+
+.stateTitle {
+  font-family: var(--sf-font-display);
+  font-size: var(--sf-text-lg);
+  font-weight: 600;
+  color: var(--sf-text);
+}
+
+/* ---------- The selected conversation ---------- */
+
+.detail {
+  padding: 18px 20px;
+  border: 1.2px solid var(--sf-border-card);
+  border-radius: var(--sf-radius-card);
+  background: var(--sf-surface);
+}
+
+.detailHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detailHead img {
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.detailTitle {
+  margin: 0;
+  font-family: var(--sf-font-display);
+  font-size: 16px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  margin: 6px 0 16px;
+  font-size: var(--sf-text-sm);
+  color: var(--sf-text-muted);
+}
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.continue {
+  margin-top: 18px;
+}
